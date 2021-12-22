@@ -1,12 +1,10 @@
 import React from 'react';
-
-import { ActivityIndicator } from 'react-native';
-
+import { ActivityIndicator, View } from 'react-native';
 import { ProgressCircle } from 'react-native-svg-charts';
 import PropTypes from 'prop-types';
 
 const CustomProgressChart = ({ chartData, chartDimension }) => (
-  chartDimension !== null ? (
+  chartData !== null ? (
     <ProgressCircle
       progress={chartData}
       progressColor="rgba(175, 220, 139, 0.7)"
@@ -14,12 +12,17 @@ const CustomProgressChart = ({ chartData, chartDimension }) => (
       strokeWidth={14}
       style={{
         borderRadius: 8,
-        width: chartDimension.width,
-        height: chartDimension.height,
+        width: chartDimension?.width,
+        height: chartDimension?.height,
       }}
     />
   ) : (
-    <ActivityIndicator size="small" color="#2b2b73" />
+    <View style={{
+      display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%',
+    }}
+    >
+      <ActivityIndicator size="large" color="#2b2b73" />
+    </View>
   )
 );
 

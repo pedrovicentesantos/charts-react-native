@@ -24,7 +24,7 @@ const CustomBarChart = ({ chartData, chartDimension }) => (
       display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%',
     }}
     >
-      <ActivityIndicator style={{ alignItems: 'center' }} size="large" color="#2b2b73" />
+      <ActivityIndicator size="large" color="#2b2b73" />
     </View>
   )
 );

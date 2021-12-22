@@ -13,8 +13,8 @@ const CustomLineChart = ({ chartData, chartDimension }) => (
       }}
       style={{
         borderRadius: 8,
-        width: chartDimension.width,
-        height: chartDimension.height,
+        width: chartDimension?.width,
+        height: chartDimension?.height,
       }}
     />
   ) : (
@@ -22,7 +22,7 @@ const CustomLineChart = ({ chartData, chartDimension }) => (
       display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%',
     }}
     >
-      <ActivityIndicator style={{ alignItems: 'center' }} size="large" color="#2b2b73" />
+      <ActivityIndicator size="large" color="#2b2b73" />
     </View>
   )
 );

@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-
 import { View, Text } from 'react-native';
-
 import styles from './styles';
 import CustomProgressChart from '../../components/CustomProgressChart/index';
 
 function GoalsPerformance() {
   const [goalsDimensions, setGoalsDimensions] = useState(null);
+  // eslint-disable-next-line no-unused-vars
+  const [goalsData, setGoalsData] = useState(0.78);
 
   return (
     <View style={styles.container}>
@@ -23,10 +23,13 @@ function GoalsPerformance() {
               : styles.goalsChartWithoutData,
           ]}
         >
-          <CustomProgressChart chartData={0.75} chartDimension={goalsDimensions} />
-          {goalsDimensions && (
+          <CustomProgressChart chartData={goalsData} chartDimension={goalsDimensions} />
+          {goalsData !== null && (
             <View style={styles.goalsChartContainer}>
-              <Text style={styles.goalsChartTitle}>75%</Text>
+              <Text style={styles.goalsChartTitle}>
+                {goalsData * 100}
+                %
+              </Text>
               <Text style={styles.goalsChartSubtitle}>R$ 1050/ semana</Text>
             </View>
           )}
