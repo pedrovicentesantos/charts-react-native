@@ -1,12 +1,10 @@
 import React from 'react';
-
-import { ActivityIndicator } from 'react-native';
-
+import { ActivityIndicator, View } from 'react-native';
 import { BarChart } from 'react-native-svg-charts';
 import PropTypes from 'prop-types';
 
 const CustomBarChart = ({ chartData, chartDimension }) => (
-  chartDimension ? (
+  chartData.length > 0 ? (
     <BarChart
       data={chartData}
       svg={{
@@ -17,12 +15,17 @@ const CustomBarChart = ({ chartData, chartDimension }) => (
       spacingInner={0.25}
       style={{
         borderRadius: 8,
-        width: chartDimension.width,
-        height: chartDimension.height,
+        width: chartDimension?.width,
+        height: chartDimension?.height,
       }}
     />
   ) : (
-    <ActivityIndicator size="small" color="#2b2b73" />
+    <View style={{
+      display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%',
+    }}
+    >
+      <ActivityIndicator style={{ alignItems: 'center' }} size="large" color="#2b2b73" />
+    </View>
   )
 );
 

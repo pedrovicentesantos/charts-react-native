@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
-
 import { View, Text, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { BorderlessButton } from 'react-native-gesture-handler';
-
 import { AntDesign } from '@expo/vector-icons';
-
 import styles from './styles';
 import CustomBarChart from '../../components/CustomBarChart';
 import { yourBusinessData, yourCompetitorData } from '../../helpers/charData';

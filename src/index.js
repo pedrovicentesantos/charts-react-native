@@ -1,14 +1,11 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-
 import Home from './pages/Home';
 import GoalsPerformance from './pages/GoalsPerformance';
 import ProductReport from './pages/ProductReport';
-
 import HeaderRight from './components/HeaderRight';
 
 const { Navigator, Screen } = createStackNavigator();
