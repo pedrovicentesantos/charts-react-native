@@ -1,12 +1,10 @@
 import React from 'react';
-
-import { ActivityIndicator } from 'react-native';
-
+import { ActivityIndicator, View } from 'react-native';
 import { LineChart } from 'react-native-svg-charts';
 import PropTypes from 'prop-types';
 
 const CustomLineChart = ({ chartData, chartDimension }) => (
-  chartDimension ? (
+  chartData.length > 0 ? (
     <LineChart
       data={chartData}
       svg={{
@@ -20,7 +18,12 @@ const CustomLineChart = ({ chartData, chartDimension }) => (
       }}
     />
   ) : (
-    <ActivityIndicator size="small" color="#2b2b73" />
+    <View style={{
+      display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%',
+    }}
+    >
+      <ActivityIndicator style={{ alignItems: 'center' }} size="large" color="#2b2b73" />
+    </View>
   )
 );
 

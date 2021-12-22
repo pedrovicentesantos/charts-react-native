@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import { Image, Text, View } from 'react-native';
-
 import { RectButton } from 'react-native-gesture-handler';
-
 import { AntDesign } from '@expo/vector-icons';
-
 import styles from './styles';
 import CustomLineChart from '../../components/CustomLineChart/index';
 import { productReportData } from '../../helpers/charData';
-
 import featuredImage from '../../assets/images/bike.jpg';
 
 function ProductReport() {
   const [reportDimensions, setReportDimensions] = useState(null);
+
   return (
     <View style={styles.container}>
       <View style={styles.featuredContainer}>
