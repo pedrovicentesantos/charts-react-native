@@ -7,10 +7,14 @@ import styles from './styles';
 import globalStyles from '../../styles';
 import CustomBarChart from '../../components/CustomBarChart';
 import { yourBusinessData, yourCompetitorData } from '../../helpers/charData';
+import CustomProgressChart from '../../components/CustomProgressChart';
 
 function Home() {
   const [yourBusinessDimensions, setYourBusinessDimensions] = useState(null);
   const [yourCompetitorDimensions, setYourCompetitorDimensions] = useState(null);
+  // eslint-disable-next-line no-unused-vars
+  const [goalsData, setGoalsData] = useState(0.78);
+  const [goalsDimensions, setGoalsDimensions] = useState(null);
   const navigation = useNavigation();
 
   function handleGoalsPerformancePress() {
@@ -107,7 +111,30 @@ function Home() {
           style={styles.goalsAnalyticsContainer}
         >
           <View style={styles.weekBalance}>
-            <View style={styles.weekBalanceChart} />
+            <View
+              onLayout={() => setGoalsDimensions({ width: 80, height: 80 })}
+              style={[
+                styles.weekBalanceChart,
+                goalsDimensions
+                  ? globalStyles.withData
+                  : globalStyles.withoutData,
+              ]}
+            >
+              <CustomProgressChart
+                chartData={goalsData}
+                chartDimension={goalsDimensions}
+                strokeWidth={4}
+              />
+              {goalsData !== null && (
+                <View style={styles.goalsChartContainer}>
+                  <Text style={styles.goalsChartTitle}>
+                    {goalsData * 100}
+                    %
+                  </Text>
+                </View>
+              )}
+            </View>
+            {/* <View style={styles.weekBalanceChart} /> */}
             <View style={styles.weekBalanceData}>
               <View style={styles.weekBalanceDataDayContainer}>
                 <Text style={styles.weekBalanceDataDayTitle}>Quarta-feira</Text>
