@@ -4,6 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { BorderlessButton } from 'react-native-gesture-handler';
 import { AntDesign } from '@expo/vector-icons';
 import styles from './styles';
+import globalStyles from '../../styles';
 import CustomBarChart from '../../components/CustomBarChart';
 import { yourBusinessData, yourCompetitorData } from '../../helpers/charData';
 
@@ -49,8 +50,8 @@ function Home() {
             style={[
               styles.businessAnalyticsChart,
               yourBusinessData
-                ? styles.businessAnalyticsChartWithData
-                : styles.businessAnalyticsChartWithoutData,
+                ? globalStyles.withData
+                : globalStyles.withoutData,
             ]}
           >
             <CustomBarChart
@@ -81,8 +82,8 @@ function Home() {
             style={[
               styles.businessAnalyticsChart,
               yourBusinessData
-                ? styles.businessAnalyticsChartWithData
-                : styles.businessAnalyticsChartWithoutData,
+                ? globalStyles.withData
+                : globalStyles.withoutData,
             ]}
           >
             <CustomBarChart

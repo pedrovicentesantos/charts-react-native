@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text } from 'react-native';
 import styles from './styles';
+import globalStyles from '../../styles';
 import CustomProgressChart from '../../components/CustomProgressChart/index';
 
 function GoalsPerformance() {
@@ -19,8 +20,8 @@ function GoalsPerformance() {
           style={[
             styles.goalsChart,
             goalsDimensions
-              ? styles.goalsChartWithData
-              : styles.goalsChartWithoutData,
+              ? globalStyles.withData
+              : globalStyles.withoutData,
           ]}
         >
           <CustomProgressChart chartData={goalsData} chartDimension={goalsDimensions} />

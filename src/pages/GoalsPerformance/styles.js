@@ -27,14 +27,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  goalsChartWithData: {
-    backgroundColor: 'transparent',
-  },
-  goalsChartWithoutData: {
-    backgroundColor: '#F0F0F0',
-    borderRadius: 8,
-    justifyContent: 'center',
-  },
   goalsChartContainer: {
     position: 'absolute',
     alignItems: 'center',

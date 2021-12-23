@@ -90,14 +90,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#ddd',
     marginVertical: 16,
   },
-  reportChartWithData: {
-    backgroundColor: 'transparent',
-  },
-  reportChartWithoutData: {
-    backgroundColor: '#F0F0F0',
-    borderRadius: 8,
-    justifyContent: 'center',
-  },
   reportButton: {
     backgroundColor: '#F6B64F',
     padding: 16,
