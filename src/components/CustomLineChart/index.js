@@ -1,7 +1,7 @@
 import React from 'react';
-import { ActivityIndicator, View } from 'react-native';
 import { LineChart } from 'react-native-svg-charts';
 import PropTypes from 'prop-types';
+import Loading from '../Loading';
 
 const CustomLineChart = ({ chartData, chartDimension }) => (
   chartData.length > 0 ? (
@@ -18,12 +18,7 @@ const CustomLineChart = ({ chartData, chartDimension }) => (
       }}
     />
   ) : (
-    <View style={{
-      display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%',
-    }}
-    >
-      <ActivityIndicator size="large" color="#2b2b73" />
-    </View>
+    <Loading />
   )
 );
 
