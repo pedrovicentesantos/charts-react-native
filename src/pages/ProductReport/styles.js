@@ -96,6 +96,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 24,
     marginBottom: 32,
+    marginTop: 16,
   },
   reportButtonText: {
     color: '#88581F',
