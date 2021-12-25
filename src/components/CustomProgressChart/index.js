@@ -24,12 +24,13 @@ const CustomProgressChart = ({ chartData, chartDimension, strokeWidth }) => (
 
 CustomProgressChart.propTypes = {
   chartData: PropTypes.number.isRequired,
-  chartDimension: PropTypes.instanceOf(Object).isRequired,
+  chartDimension: PropTypes.instanceOf(Object),
   strokeWidth: PropTypes.number,
 };
 
 CustomProgressChart.defaultProps = {
   strokeWidth: 14,
+  chartDimension: {},
 };
 
 export default CustomProgressChart;

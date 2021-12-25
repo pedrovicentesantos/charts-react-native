@@ -103,7 +103,11 @@ const CustomLineChart = ({ chartData, chartDimension }) => (
 
 CustomLineChart.propTypes = {
   chartData: PropTypes.instanceOf(Object).isRequired,
-  chartDimension: PropTypes.instanceOf(Object).isRequired,
+  chartDimension: PropTypes.instanceOf(Object),
+};
+
+CustomLineChart.defaultProps = {
+  chartDimension: {},
 };
 
 export default CustomLineChart;

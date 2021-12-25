@@ -26,7 +26,11 @@ const CustomBarChart = ({ chartData, chartDimension }) => (
 
 CustomBarChart.propTypes = {
   chartData: PropTypes.instanceOf(Object).isRequired,
-  chartDimension: PropTypes.instanceOf(Object).isRequired,
+  chartDimension: PropTypes.instanceOf(Object),
+};
+
+CustomBarChart.defaultProps = {
+  chartDimension: {},
 };
 
 export default CustomBarChart;
